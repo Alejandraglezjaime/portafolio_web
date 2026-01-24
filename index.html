@@ -3,74 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Web | Alejandra Gonzalez</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
-    <title>Amelia Portfolio</title>
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
+
 <body>
-    <nav>
-        <div class="nav-container">
-            <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
-                <span id="name-logo">⭒ Alejandra Gonzalez ⭒</span>
-            </div>
-            <div class="links">
-                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="#">Home</a></div>
-                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="#">Skills</a></div>
-                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="#">Education</a></div>
-                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="#">My projects</a></div>
-                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><a href="#">Contact me</a></div>
-            </div>
-            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+<nav>
+    <div class="nav-container">
+        <div class="logo" data-aos="zoom-in">
+            <span id="name-logo">⭒ Alejandra Gonzalez ⭒</span>
         </div>
-        <div class="dropdown">
-            <div class="links">
-                <a href="">Home</a>
-                <a href="">Skills</a>
-                <a href="">Education</a>
-                <a href="">My projects</a>
-                <a href="">Contact me</a>
-                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
-            </div>
+
+        <div class="links">
+            <a href="#">Home</a>
+            <a href="#">Skills</a>
+            <a href="#">Education</a>
+            <a href="#">Projects</a>
+            <a href="#">Contact</a>
         </div>
-    </nav>
-        <section>
-            <div class="main-container">
-                <div class="image" data-aos="zoom-in-right" data-aos-duration="2500">
-                    <img src="img.jpeg" alt="">
-                </div>
-                <div class="content">
-                    <h1 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="800">Hey I'm <span>Alejandra Gonzalez</span></h1>
-                    <div class="typewriter" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="900">I'm a <span></span></div>
-                    <p data-aos="flip-up" data-aos-duration="1000" data-aos-delay="1000"> I am a Computer Engineering graduate from FES Aragón (UNAM), passionate about web and mobile development. I enjoy working on both frontend and backend, creating applications that combine functionality with clean and user-friendly design. I have experience with Java, C, C++, PHP, and databases, and I am constantly learning to improve my skills as a developer. </p>
-                    <div class="social-links" data-aos="flip-down" data-aos-duration="1000" data-aos-delay="1200">
-                        <a href="#" ><i class="fa-brands fa-github"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                    </div>
-                    <div class="btn" data-aos="zoom-out-left" data-aos-duration="1000" data-aos-delay="1300">
-                        <button>Download CV</button>
-                    </div>
-                </div>
+
+        <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+    </div>
+
+    <div class="dropdown">
+        <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+        <div class="links">
+            <a href="#" onclick="cancel()">Home</a>
+            <a href="#" onclick="cancel()">Skills</a>
+            <a href="#" onclick="cancel()">Education</a>
+            <a href="#" onclick="cancel()">Projects</a>
+            <a href="#" onclick="cancel()">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="main-container">
+        <div class="image" data-aos="zoom-in-right" data-aos-duration="2000">
+            <img src="img.jpeg" alt="Alejandra Gonzalez">
+        </div>
+
+        <div class="content">
+            <h1 data-aos="fade-left">Hey I'm <span>Alejandra Gonzalez</span></h1>
+            <div class="typewriter" data-aos="fade-right">
+                I'm a <span></span>
             </div>
-        </section>
-        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-        <script>
-          AOS.init({offset:0});
-        </script>
-        <script>
-            function hamburg(){
-                const navbar = document.querySelector(".dropdown")
-                navbar.style.transform = "translateY(0px)"
-            }
-            function cancel(){
-                const navbar = document.querySelector(".dropdown")
-                navbar.style.transform = "translateY(-500px)"
-            }
-        </script>
+            <p data-aos="fade-up">
+                I am a Computer Engineering graduate from FES Aragón (UNAM),
+                passionate about web and mobile development. I enjoy working on
+                both frontend and backend, creating applications that combine
+                functionality with clean and user-friendly design.
+            </p>
+            <div class="social-links" data-aos="zoom-in">
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+            <button>Download CV</button>
+        </div>
+    </div>
+</section>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init({ offset: 0 });
+
+    function hamburg() {
+        document.querySelector(".dropdown").style.transform = "translateY(0)";
+    }
+
+    function cancel() {
+        // -100% para que el menú suba y desaparezca totalmente
+        document.querySelector(".dropdown").style.transform = "translateY(-100%)";
+    }
+</script>
 </body>
 </html>

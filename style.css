@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
 
+/* ================= RESET ================= */
 *{
     padding: 0;
     margin: 0;
@@ -7,22 +8,25 @@
     box-sizing: border-box;
 }
 
-html{
+html, body {
+    width: 100%;
     overflow-x: hidden;
+    position: relative;
 }
 
 body{
-    width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background: linear-gradient(to right, rgb(192, 242, 251), rgb(141, 176, 219));
 }
 
-/* ================= NAV ================= */
-
+/* ================= NAV (Escritorio) ================= */
 nav{
     width: 100%;
     height: 10vh;
-    position: sticky;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
 }
 
 .nav-container{
@@ -34,13 +38,13 @@ nav{
 }
 
 .logo{  
-    color: rgb(20, 61, 246);
+    color: rgb(24, 122, 183);
     font-size: 2rem;
     font-weight: bolder;
 }
 
 .logo span{
-    color: rgb(5, 33, 110);
+    color: rgb(24, 122, 183);
     text-shadow: 0 0 10px rgba(243, 238, 246, 0.8);
 }
 
@@ -48,9 +52,8 @@ nav{
     font-family: 'Libre Baskerville', serif;
     font-weight: 700;
     letter-spacing: 1px;
+    white-space: nowrap;
 }
-
-/* ===== NAV LINKS ===== */
 
 .nav-container .links{
     display: flex;
@@ -77,96 +80,94 @@ nav{
     transition: 0.2s linear;
 }
 
-.nav-container .links a:hover::before{
-    width: 100%;
-}
+.nav-container .links a:hover::before{ width: 100%; }
+.nav-container .links a:hover{ color: rgb(8, 45, 119); }
 
-.nav-container .links a:hover{
+/* ===== ICONOS MÓVIL ===== */
+.hamburg {
+    cursor: pointer;
+    font-size: 2.5rem;
+    display: none; 
     color: rgb(8, 45, 119);
 }
 
-/* ===== HAMBURGER ===== */
-
-.hamburg,
-.cancel{
+.cancel {
     cursor: pointer;
+    font-size: 3rem;
+    color: white;
     position: absolute;
-    right: 15px;
-    top: 10px;
-    font-size: 2rem;
-    display: none;
+    top: 20px;
+    right: 25px;
 }
 
 /* ===== DROPDOWN ===== */
-
 .dropdown{
-    position: absolute;
+    position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
-    transform: translateY(-500px);
-    backdrop-filter: brightness(40%) blur(3px);
-    transition: 0.2s linear;
-    z-index: 100;
+    height: 100vh;
+    transform: translateY(-100%);
+    backdrop-filter: brightness(30%) blur(10px);
+    -webkit-backdrop-filter: brightness(30%) blur(10px);
+    transition: 0.4s ease-in-out;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropdown .links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 .dropdown .links a{
     color: white;
-    display: flex;
-    justify-content: center;
+    display: block;
     padding: 15px 0;
     text-decoration: none;
+    font-size: 1.8rem;
+    transition: 0.3s;
 }
 
-.dropdown .links a:hover{
-    background-color: rgb(8, 45, 119);
-}
-
-/* ================= MAIN ================= */
-
-section{
+/* ================= MAIN SECCIÓN ================= */
+section.hero{
     width: 100%;
-    height: 90vh;
-}
-
-.main-container{
-    height: 100%;
+    min-height: 100vh;
+    padding-top: 10vh;
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
 }
 
+.main-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 5%;
+}
+
 .main-container .image{
-    width: 50%;
+    width: 40%;
 }
 
 .main-container .image img{
     width: 100%;
+    border-radius: 20px;
 }
 
 .main-container .content{
-    width: 40%;
+    width: 50%;
 }
 
-.content h1{
-    font-size: clamp(1.5rem, 2rem + 5vw, 3rem);
-}
+.content h1{ font-size: clamp(1.8rem, 4vw, 3.5rem); }
+.content h1 span{ color: rgb(8, 45, 119); }
 
-.content h1 span{
-    color: rgb(8, 45, 119);
-}
-
-/* ===== TYPEWRITER ===== */
-
-.typewriter{
-    font-size: clamp(1rem, 1rem + 5vw, 2rem);
-    font-weight: 600;
-}
-
-.typewriter span{
-    color: rgb(8,45,119);
-    font-size: 2.5rem;
-    position: relative;
-}
+.typewriter{ font-size: 2rem; font-weight: 600; margin: 10px 0; }
+.typewriter span{ color: rgb(8, 45, 119); position: relative; }
 
 .typewriter span::before{
     content: "Developer";
@@ -176,49 +177,32 @@ section{
 .typewriter span::after{
     content: "";
     position: absolute;
-    width: calc(100% + 8px);
+    right: -5px;
+    width: 2px;
     height: 100%;
-    border-left: 3px solid rgb(15, 5, 98);
+    background: rgb(15, 5, 98);
     animation: cursor 0.9s infinite;
 }
 
-@keyframes cursor{
-    to{ border-left: 3px solid #0483de; }
-}
-
+@keyframes cursor{ 50% { opacity: 0; } }
 @keyframes words{
-    0%,33%{ content: "Web & Mobile Developer"; }
-    34%,66%{ content: "Backend Developer"; }
-    67%,100%{ content: "Frontend Developer"; }
+    0%, 33%{ content: "Web & Mobile Dev"; }
+    34%, 66%{ content: "Backend Developer"; }
+    67%, 100%{ content: "Frontend Developer"; }
 }
-
-/* ===== SOCIAL ===== */
 
 .social-links i{
-    width: 3rem;
-    height: 3rem;
-    border: 0.2rem solid rgb(8,45,119);
-    border-radius: 50%;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    margin: 5px 10px;
-    transition: 0.2s;
+    font-size: 2rem;
+    margin: 20px 10px;
+    color: rgb(8, 45, 119);
+    transition: 0.3s;
 }
 
-.social-links i:hover{
-    background: rgb(8,45,119);
-    color: white;
-    scale: 1.2;
-}
-
-/* ===== BUTTON ===== */
+.social-links i:hover{ transform: scale(1.2); }
 
 .content button{
-    width: 40%;
-    height: 6vh;
-    margin-top: 30px;
-    background: rgb(8,45,119);
+    padding: 10px 30px;
+    background: rgb(8, 45, 119);
     color: white;
     border: none;
     border-radius: 5px;
@@ -226,34 +210,37 @@ section{
     cursor: pointer;
 }
 
-.content button:hover{
-    background: transparent;
-    color: rgb(8,45,119);
-    border: 2px solid rgb(8,45,119);
-}
+/* ================= RESPONSIVE CORREGIDO ================= *//* ================= RESPONSIVE CORREGIDO ================= */
+@media (max-width: 884px){
+    .nav-container .links{ display: none; }
+    .hamburg { display: block; }
 
-/* ================= RESPONSIVE ================= */
-
-@media(max-width:884px){
-
-    .nav-container .links{
-        display: none;
-    }
-
-    .hamburg,
-    .cancel{
-        display: block;
+    #name-logo {
+        font-size: 1.1rem; 
+        letter-spacing: 0px;
     }
 
     .main-container{
         flex-direction: column;
+        text-align: center;
     }
 
+    .main-container .image,
     .main-container .content{
-        width: 90%;
+        width: 100%;
     }
 
-    .main-container .image{
-        width: 90%;
+    .main-container .image { order: -1; margin-bottom: 30px; }
+    
+    .content h1 { font-size: 1.8rem; }
+
+    /* Ajuste de la línea (cursor) en móvil */
+    .typewriter { font-size: 1.5rem; }
+    
+    .typewriter span::after {
+        width: 2px;          /* Línea más delgada */
+        height: 80%;         /* Un poco más corta que el texto */
+        top: 10%;            /* Centrada verticalmente */
+        right: -5px;         /* Más pegada al texto */
     }
 }
