@@ -412,37 +412,62 @@ section.hero{
         right: -5px;
     }
 
+    /* --- EDUCACIÓN: Sin birretes, con puntos alineados --- */
     .education {
-        padding-top: 50px;
+        padding-top: 80px;
+        padding-left: 20px;
+        padding-right: 15px;
     }
 
-    .education-timeline::before { left: 10px; }
+    .education-timeline::before { 
+        left: 20px; /* Posición de tu línea vertical */
+    }
 
     .edu-item {
-        width: 100%;
-        left: 0 !important;
+        width: calc(100% - 70px); 
+        left: 55px !important; 
         text-align: left;
-        padding-left: 50px;
+        padding: 20px;
+        margin-bottom: 40px;
     }
 
-    .edu-item::before { left: -5px !important; }
+    .edu-item::before { 
+        content: ""; /* Se eliminan los birretes */
+        position: absolute;
+        /* -42px coloca el punto exactamente al centro de la línea de 20px */
+        left: -42px !important; 
+        top: 25px;
+        width: 12px;
+        height: 12px;
+        background: #00f2ff; /* Color cian neón */
+        border-radius: 50%;
+        box-shadow: 0 0 10px #00f2ff;
+        display: block;
+    }
+
+    /* --- SKILLS: Borde de 15px sobre los costados --- */
+    .skills {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 
     .skills h2 { font-size: 2.2rem; }
 
     .skills-grid {
         grid-template-columns: 1fr;
-        gap: 50px;
+        gap: 40px;
+        padding: 0 5px; 
     }
 
     .skills-cards {
-        grid-template-columns: repeat(3, minmax(60px, 84px));
+        display: flex;
+        flex-wrap: wrap;
         justify-content: center;
-        justify-items: center;
-        gap: 8px;
+        gap: 12px;
     }
 
     .skill-card {
-        max-width: 84px;
-        padding: 6px 6px;
+        max-width: 95px;
+        flex: 0 0 95px;
     }
 }
