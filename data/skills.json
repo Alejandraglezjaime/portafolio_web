@@ -1,0 +1,45 @@
+{
+  "programming_languages": [
+    { "name": "Java", "icon": "fa-brands fa-java" },
+    { "name": "C", "icon": "fa-solid fa-c" },
+    { "name": "C++", "icon": "fa-solid fa-code" },
+    { "name": "Python", "icon": "fa-brands fa-python" }
+  ],
+
+  "web_development": [
+    { "name": "HTML", "icon": "fa-brands fa-html5" },
+    { "name": "CSS", "icon": "fa-brands fa-css3-alt" },
+    { "name": "JavaScript", "icon": "fa-brands fa-js" },
+    { "name": "Node.js", "icon": "fa-brands fa-node-js" },
+    { "name": "Spring Boot", "icon": "fa-solid fa-leaf" },
+    { "name": "PHP", "icon": "fa-brands fa-php" }
+  ],
+
+  "frameworks_ui": [
+    { "name": "Bootstrap", "icon": "fa-brands fa-bootstrap" },
+    { "name": "Metronic", "icon": "fa-solid fa-layer-group" }
+  ],
+
+  "databases": [
+    { "name": "MySQL", "icon": "fa-solid fa-database" },
+    { "name": "PostgreSQL", "icon": "fa-solid fa-database" },
+    { "name": "MariaDB", "icon": "fa-solid fa-database" }
+  ],
+
+  "tools": [
+    { "name": "Git", "icon": "fa-brands fa-git-alt" },
+    { "name": "GitHub", "icon": "fa-brands fa-github" },
+    { "name": "Linux", "icon": "fa-brands fa-linux" },
+    { "name": "Laragon", "icon": "fa-solid fa-server" }
+  ],
+
+  "soft_skills": [
+    { "name": "Communication", "icon": "fa-solid fa-comments" },
+    { "name": "Teamwork", "icon": "fa-solid fa-people-group" },
+    { "name": "Adaptability", "icon": "fa-solid fa-arrows-spin" },
+    { "name": "Leadership", "icon": "fa-solid fa-user-tie" },
+    { "name": "Commitment", "icon": "fa-solid fa-handshake" },
+    { "name": "Problem Solving", "icon": "fa-solid fa-puzzle-piece" },
+    { "name": "Time Management", "icon": "fa-solid fa-clock" }
+  ]
+}

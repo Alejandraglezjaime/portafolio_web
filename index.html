@@ -9,35 +9,34 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+
 <nav>
     <div class="nav-container">
         <div class="logo" data-aos="zoom-in">
             <span id="name-logo">⭒ Alejandra Gonzalez ⭒</span>
         </div>
-
         <div class="links">
-            <a href="#">Home</a>
-            <a href="#">Skills</a>
-            <a href="#">Education</a>
-            <a href="#">Projects</a>
-            <a href="#">Contact</a>
+            <a href="index.html">Home</a>
+            <a href="skills.html">Skills</a>
+            <a href="education.html">Education</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
         </div>
-
         <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
     </div>
 
     <div class="dropdown">
         <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
         <div class="links">
-            <a href="#" onclick="cancel()">Home</a>
-            <a href="#" onclick="cancel()">Skills</a>
-            <a href="#" onclick="cancel()">Education</a>
-            <a href="#" onclick="cancel()">Projects</a>
-            <a href="#" onclick="cancel()">Contact</a>
+            <a href="index.html" onclick="cancel()">Home</a>
+            <a href="skills.html" onclick="cancel()">Skills</a>
+            <a href="education.html" onclick="cancel()">Education</a>
+            <a href="projects.html" onclick="cancel()">Projects</a>
+            <a href="contact.html" onclick="cancel()">Contact</a>
         </div>
     </div>
 </nav>
@@ -45,11 +44,12 @@
 <section class="hero">
     <div class="main-container">
         <div class="image" data-aos="zoom-in-right" data-aos-duration="2000">
-            <img src="img.jpeg" alt="Alejandra Gonzalez">
+            <img src="assets/img.jpeg" alt="Alejandra Gonzalez">
         </div>
-
         <div class="content">
-            <h1 data-aos="fade-left">Hey I'm <span>Alejandra Gonzalez</span></h1>
+            <h1 data-aos="fade-left">
+                Hey I'm <span>Alejandra Gonzalez</span>
+            </h1>
             <div class="typewriter" data-aos="fade-right">
                 I'm a <span></span>
             </div>
@@ -57,24 +57,32 @@
                 I am a Computer Engineering graduate from FES Aragón (UNAM), passionate about web and mobile development. I enjoy working on both frontend and backend, creating applications that combine functionality with clean and user-friendly design. I have experience with Java, C, C++,PHP, and databases, and I am constantly learning to improve my skills as a developer.
             </p>
             <div class="social-links" data-aos="zoom-in">
-                
                 <a href="https://github.com/Alejandraglezjaime" target="_blank"><i class="fa-brands fa-github"></i></a>
-                <a href="https://www.instagram.com/_alejandra_gonzalez__?igsh=MWtpa3Y2Y2x6cnRiOA%3D%3D&utm_source=qr" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/in/alejandra-gonzalez-dev" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/_alejandra_gonzalez__" target="_blank"><i class="fa-brands fa-instagram"></i></a><a href="https://www.linkedin.com/in/alejandra-gonzalez-dev" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
             </div>
-            <a href="documentos/CV.pdf" download>
-                <button>Download CV</button>
-            </a>
+            <a href="documentos/CV.pdf" download><button>Download CV</button></a>
         </div>
     </div>
 </section>
+
+<!-- ===== SKILLS SECTION ===== -->
+
+<section class="skills" id="skills">
+    <h2>My Skills</h2>
+    <p>Technologies and tools I work with</p>
+
+    <div class="skills-grid" id="skillsGrid"></div>
+</section>
+
+
 
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
     AOS.init({ offset: 0 });
 </script>
 
-<script src="index.js"></script>
+<script src="js/index.js"></script>
+<script src="js/skills.js"></script>
 
 </body>
 </html>

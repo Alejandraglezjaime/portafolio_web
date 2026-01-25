@@ -17,11 +17,10 @@ html, body {
 
 body{
     min-height: 100vh;
-    /* Mantenemos tu degradado original */
     background: linear-gradient(to right, rgb(192, 242, 251), rgb(141, 176, 219));
 }
 
-/* ================= NAV (Fijo con estilo de fondo) ================= */
+/* ================= NAV  ================= */
 nav{
     width: 100%;
     height: 10vh;
@@ -29,9 +28,7 @@ nav{
     top: 0;
     left: 0;
     z-index: 9999;
-    /* Aplicamos el mismo degradado del fondo para que sea uniforme */
     background: linear-gradient(to right, rgb(192, 242, 251), rgb(141, 176, 219));
-    /* Añadimos una sombra sutil para que no se pierda al hacer scroll */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
@@ -89,7 +86,7 @@ nav{
 .nav-container .links a:hover::before{ width: 100%; }
 .nav-container .links a:hover{ color: rgb(8, 45, 119); }
 
-/* ===== ICONOS MÓVIL ===== */
+/* =====  NAV MOVIL===== */
 .hamburg {
     cursor: pointer;
     font-size: 2.5rem;
@@ -139,11 +136,11 @@ nav{
     transition: 0.3s;
 }
 
-/* ================= MAIN SECCIÓN ================= */
+/* ================= HOME ================= */
 section.hero{
     width: 100%;
     min-height: 100vh;
-    padding-top: 10vh; /* Espacio para que el nav fijo no tape el contenido */
+    padding-top: 10vh;
     display: flex;
     align-items: center;
 }
@@ -216,6 +213,90 @@ section.hero{
     cursor: pointer;
 }
 
+/* ================= SKILLS ================= */
+
+.skills {
+    padding: 90px 6%;
+    text-align: center;
+}
+
+.skills h2 {
+    font-size: 3rem;
+    color: #1a137a;
+}
+
+.skills p {
+    font-size: 1.2rem;
+    margin-bottom: 60px;
+    opacity: .75;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skills-category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skills-category h3 {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    color: #2b39c7;
+    margin-bottom: 25px;
+}
+
+.skills-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.skill-card {
+    width: 100%;
+    max-width: 110px;
+    flex: 0 0 110px;
+    height: auto;
+    padding: 6px 8px;
+    background: rgba(255,255,255,.18);
+    backdrop-filter: blur(6px);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    box-shadow: 0 6px 14px rgba(0,0,0,.14);
+    transition: .18s ease;
+}
+
+.skill-card i {
+    font-size: 1.2rem;
+    color: #0e0652;
+}
+
+.skill-card span {
+    font-size: .65rem;
+    font-weight: 600;
+}
+
+.skill-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 14px 30px rgba(8,45,119,.30);
+}
+
+
+
+
+
 /* ================= RESPONSIVE CORREGIDO ================= */
 @media (max-width: 884px){
     /* En móvil mantenemos el degradado */
@@ -254,4 +335,36 @@ section.hero{
         top: 10%;
         right: -5px;
     }
+
+    /*Responsive de skills*/
+
+    .skills h2 {
+        font-size: 2.2rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .skills-cards {
+        grid-template-columns: repeat(3, minmax(60px, 84px));
+        justify-content: center;
+        justify-items: center;
+        gap: 8px;
+    }
+
+    .skill-card {
+        max-width: 84px;
+        padding: 6px 6px;
+    }
+
+    .skill-card i {
+        font-size: 1.2rem;
+    }
+
+    .skill-card span {
+        font-size: .62rem;
+    }
+
 }
