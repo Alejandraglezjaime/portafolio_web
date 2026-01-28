@@ -17,20 +17,18 @@ html, body {
 
 body{
     min-height: 100vh;
-    /* Fondo oscuro neón */
     background: linear-gradient(to right, #050a18, #0d0121);
     color: #ffffff;
 }
 
 /* ================= NAV  ================= */
-nav{
+nav {
     width: 100%;
     height: 10vh;
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 9999;
-    /* Fondo oscuro para el nav */
+    z-index: 10001; /* Un nivel más arriba que el dropdown */
     background: linear-gradient(to right, #050a18, #0d0121);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
@@ -44,13 +42,13 @@ nav{
 }
 
 .logo{  
-    color: #00f2ff; /* Azul neón */
+    color: #00f2ff; 
     font-size: 2rem;
     font-weight: bolder;
 }
 
 .logo span{
-    color: #bd00ff; /* Morado neón */
+    color: #bd00ff; 
     text-shadow: 0 0 10px rgba(189, 0, 255, 0.8);
 }
 
@@ -69,7 +67,7 @@ nav{
 .nav-container .links a{
     position: relative;
     font-size: 1.2rem;
-    color: #ffffff; /* Texto blanco para resaltar */
+    color: #ffffff;
     text-decoration: none;
     font-weight: 500;
     transition: 0.3s linear;
@@ -107,17 +105,17 @@ nav{
 }
 
 /* ===== DROPDOWN ===== */
-.dropdown{
+.dropdown {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    transform: translateY(-100%);
+    transform: translateY(-100%); /* Escondido arriba */
     backdrop-filter: brightness(20%) blur(10px);
     -webkit-backdrop-filter: brightness(20%) blur(10px);
     transition: 0.4s ease-in-out;
-    z-index: 10000;
+    z-index: 10000; /* Debajo del nav para que no tape la hamburguesa */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -197,42 +195,104 @@ section.hero{
     67%, 100%{ content: "Frontend Developer"; }
 }
 
-.social-links i{
-    font-size: 2rem;
-    margin: 20px 10px;
-    color: #00f2ff;
-    transition: 0.3s;
+.social-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin: 25px 0;
+    flex-wrap: wrap;
 }
 
-.social-links i:hover{ transform: scale(1.2); color: #bd00ff; }
+.social-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
 
-.content button{
-    padding: 10px 30px;
-    background: #bd00ff; /* Botón morado */
+.social-links a i {
+    font-size: 1.8rem;
+    color: #00f2ff; 
+    margin: 20px 10px;
+    transition: 0.3s ease;
+    filter: drop-shadow(0 0 5px rgba(0, 242, 255, 0.3));
+}
+
+.social-links a i:hover {
+    transform: scale(1.2);
+    color: #bd00ff; 
+    filter: drop-shadow(0 0 10px rgba(189, 0, 255, 0.6));
+}
+
+/* Ubicación */
+.hero-location {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 20px;
+    border-left: 2px solid rgba(189, 0, 255, 0.6);
+    height: 30px; 
+}
+
+.hero-location i {
+    color: #bd00ff; 
+    font-size: 1.2rem;
+    filter: drop-shadow(0 0 5px rgba(189, 0, 255, 0.5));
+}
+
+.hero-location span {
+    font-size: 1rem;
+    color: #ffffff;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+/* Boton CV */
+.content button {
+    margin-top: 10px;
+    padding: 12px 35px;
+    background: #bd00ff;
     color: white;
     border: none;
-    border-radius: 5px;
-    font-weight: 700;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
+    transition: 0.3s ease;
     box-shadow: 0 0 15px rgba(189, 0, 255, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.content button:hover {
+    background: #00f2ff;
+    color: #050a18;
+    box-shadow: 0 0 25px rgba(0, 242, 255, 0.6);
+    transform: translateY(-3px);
 }
 
 /* ================= TITULOS DE LAS SECCIONES ================= */
 
-.education, .skills, .projects {
+.education, .skills, .projects, .contact {
     padding: 10px 0;
     text-align: center;
 }
 
-.education h2, .skills h2, .projects h2 {
+.education h2, .skills h2, .projects h2, .contact h2 {
     font-size: 3rem;
     color: #00f2ff;
+    padding:  50px 0px 0px 0px;
 }
 
 .education p, .skills p, .projects p {
     font-size: 1.2rem;
     opacity: .75;
-    margin-bottom: 70px;
+    margin-bottom: 30px; 
+}
+
+.contact h4 {
+    font-size: 1.2rem;
+    opacity: .75;
+    margin-bottom: 5px; 
 }
 
 /* =============== EDUCACION =============== */
@@ -376,20 +436,8 @@ section.hero{
     border-color: #bd00ff;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 /* ================= PROJECTS ================= */
 
-/* ===== GRID ===== */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -482,6 +530,127 @@ section.hero{
     background: #bd00ff;
 }
 
+/* ================= CONTACT ================= */
+
+.contact h6 ,.contact h6 span {
+    display: block;
+    color: #00f2ff; /* Azul neón */
+    font-weight: 600;
+    text-shadow: 0 0 8px rgba(0, 242, 255, 0.4);
+   padding: 0px 0px 20px 0px;
+}
+
+.contact form {
+    max-width: 650px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.03); 
+    padding: 40px;
+    border-radius: 22px;
+    border: 1px solid rgba(0, 242, 255, 0.15);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.contact form input, 
+.contact form textarea {
+    width: 100%;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(189, 0, 255, 0.2);
+    border-radius: 12px;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.contact form textarea {
+    resize: none;
+    height: 160px;
+}
+
+.contact form input:focus, 
+.contact form textarea:focus {
+    border-color: #00f2ff;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+}
+
+.contact form button {
+    padding: 15px;
+    background: #bd00ff; 
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 0 15px rgba(189, 0, 255, 0.4);
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact form button:hover {
+    background: #00f2ff; 
+    color: #050a18;
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.6);
+    transform: translateY(-3px);
+}
+
+::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* ================= FOOTER  ================= */
+.footer-simple {
+    width: 100%;
+    padding: 40px 0;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05); 
+    margin-top: 50px;
+}
+
+.footer-content p {
+    font-size: 0.9rem;
+    color: #ffffff;
+    opacity: 0.8;
+    margin-bottom: 10px;
+}
+
+.footer-content p span {
+    color: #bd00ff; 
+}
+
+.footer-bottom-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-bottom-links a {
+    color: #00f2ff; 
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: 0.3s;
+}
+
+.footer-bottom-links a:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+}
+
+.footer-bottom-links p {
+    font-size: 0.85rem;
+    opacity: 0.5;
+    margin-bottom: 0; 
+}
+
+
 /* ================= RESPONSIVE CORREGIDO ================= */
 @media (max-width: 884px){
     nav {
@@ -489,7 +658,21 @@ section.hero{
     }
 
     .nav-container .links{ display: none; }
-    .hamburg { display: block; }
+
+    .hamburg {
+        display: block;
+        cursor: pointer;
+        font-size: 2.5rem;
+        color: #00f2ff;
+        z-index: 10002; 
+    }
+    
+    .cancel {
+        cursor: pointer;
+        font-size: 3rem;
+        color: white;
+        z-index: 10006; 
+    }
 
     #name-logo {
         font-size: 1.1rem; 
@@ -518,7 +701,6 @@ section.hero{
         right: -5px;
     }
 
-    /* --- EDUCACIÓN: Sin birretes, con puntos alineados --- */
     .education {
         padding-top: 80px;
         padding-left: 20px;
@@ -526,7 +708,7 @@ section.hero{
     }
 
     .education-timeline::before { 
-        left: 20px; /* Posición de tu línea vertical */
+        left: 20px; 
     }
 
     .edu-item {
@@ -538,21 +720,19 @@ section.hero{
     }
 
     .edu-item::before { 
-        content: ""; /* Se eliminan los birretes */
+        content: ""; 
         position: absolute;
-        /* -42px coloca el punto exactamente al centro de la línea de 20px */
         left: -42px !important; 
         top: 25px;
         width: 12px;
         height: 12px;
-        background: #00f2ff; /* Color cian neón */
+        background: #00f2ff; 
         border-radius: 50%;
         box-shadow: 0 0 10px #00f2ff;
         display: block;
     }
 
-    /* --- SKILLS: Borde de 15px sobre los costados --- */
-    .skills , .projects-grid {
+    .skills , .projects-gri, .contact {
         padding-left: 15px;
         padding-right: 15px;
     }
@@ -583,5 +763,41 @@ section.hero{
 
     .project-image img {
         height: 180px;
+    }
+
+     .contact h2 {
+        font-size: 2.2rem;
+    }
+    
+    .contact form {
+        padding: 25px;
+        border-radius: 15px;
+    }
+
+    .contact h6 {
+        font-size: 0.95rem;
+    }
+
+    .social-wrapper {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero-location {
+        border-left: none; 
+        padding-left: 0;
+        width: 100%; 
+        justify-content: center;
+        height: auto;
+    }
+    
+    .content button {
+        width: 100%; 
+        max-width: 300px;
+    }
+
+    .footer-bottom-links {
+        flex-direction: column;
+        gap: 10px;
     }
 }
