@@ -43,6 +43,14 @@ document.addEventListener("DOMContentLoaded", () => {
                   : ""
               }
 
+              ${
+                project.descarga
+                  ? `<a href="${project.descarga}" target="_blank" download>
+                        <i class="fa-solid fa-download"></i> Descargar
+                    </a>`
+                  : ""
+              }
+
             </div>
           </div>
         `;

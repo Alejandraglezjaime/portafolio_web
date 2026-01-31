@@ -1,30 +1,34 @@
 [
   {
+    "title": "SpotifyMe",
+    "image": "assets/projects/spotifyMe.png",
+    "description": "Android mobile application that incorporates a user authentication system using email and password, securely managed through Firebase Authentication, allowing user registration and login.The application integrates with the official Spotify API to display up-to-date information about artists, albums, songs, and recent releases. When a song is selected, if the device has an active Spotify session, playback starts automatically in the official Spotify application.",
+    "github": "",
+    "demo": "",
+    "descarga": "https://drive.google.com/drive/folders/1B1JAZ-FkCh-HPTbQawEHZSRjmlsgZZuZ?usp=sharing"
+  },
+  {
     "title": "Vacation Calculator Program",
     "image": "assets/projects/cocaCola.png",
     "description": "Desktop application developed in Java that simulates an internal system for managing employee vacations. Its main function is to automatically calculate the vacation days an employee is entitled to, considering their position within the company and their years of service. The system uses the Coca-Cola brand solely for academic purposes.",
     "github": "https://github.com/Alejandraglezjaime/Curso-Java-en-bloc-notas-.git",
-    "demo": ""
-  },
-  {
-    "title": "SpotifyMe",
-    "image": "assets/projects/spotifyMe.png",
-    "description": "Android mobile application that incorporates a user authentication system using email and password, securely managed through Firebase Authentication, allowing user registration and login.The application integrates with the official Spotify API to display up-to-date information about artists, albums, songs, and recent releases. When a song is selected, if the device has an active Spotify session, playback starts automatically in the official Spotify application.",
-    "github": "https://github.com/Alejandraglezjaime/SpotifyMe.git",
-    "demo": ""
+    "demo": "",
+    "descarga":""
   },
   {
     "title": "Movie Quotes App",
     "image": "assets/projects/screenMatch.jpg",
     "description": "This application is an entertainment platform similar to Netflix or Prime Video, where users can browse series organized by category. It was developed using Spring Boot, Java, an API with API KEY, and an SQL database, and includes a frontend to enhance the user experience. The app allows users to search for series through the OMDb API, automatically store data in the database, view episodes, apply filters, and display rankings such as the Top 5 and Top 10. All series are presented dynamically and intuitively on the frontend.",
     "github": "https://github.com/Alejandraglezjaime/App-series-y-peliculas.git",
-    "demo": ""
+    "demo": "",
+    "descarga":""
   },
   {
     "title": "Book Information",
     "image": "assets/projects/buscadorLibros.png",
     "description": "The project consists of integrating the Gutendex API to obtain book information and store the results in a PostgreSQL database. The application allows users to search books by title and automatically save their information in the database, as well as view registered books and authors. In addition, it provides features to filter books by language, check authors who were alive in a specific year, generate statistics, display the Top 10 most downloaded books, and search authors by name. All system functionality is handled through the console.",
     "github": "https://github.com/Alejandraglezjaime/Aplicacion_de_libros.git",
-    "demo": ""
+    "demo": "",
+    "descarga":""
   }
 ]
