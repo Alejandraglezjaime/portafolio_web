@@ -3,7 +3,7 @@
     "title": "SpotifyMe",
     "image": "assets/projects/spotifyMe.png",
     "description": "Android mobile application that incorporates a user authentication system using email and password, securely managed through Firebase Authentication, allowing user registration and login.The application integrates with the official Spotify API to display up-to-date information about artists, albums, songs, and recent releases. When a song is selected, if the device has an active Spotify session, playback starts automatically in the official Spotify application.",
-    "github": "",
+    "github": "https://github.com/Alejandraglezjaime/SpotifyMe.git",
     "demo": "",
     "descarga": "https://drive.google.com/file/d/1fm0oWuz9jtO3hB5iPsav9EDY5j3TvZNr/view?usp=sharing"
   },
